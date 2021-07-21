@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+    apache_starter:
+        build: ./
+        container_name: apache_starter
+        restart: unless-stopped
+        tty: true
+        volumes:
+            - ./src:/etc/mysql/conf.d
+        ports:
+            - "8080:80"
